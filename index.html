@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>少司缘吧 - 原神角色资讯、同人创作与同人社区交流</title>
+    <meta name="description" content="少司缘吧是原神角色少司缘的专属同人社区与资讯平台，提供角色背景故事、同人绘画、同人小说、同人视频、同人图集及玩家讨论交流。">
+    <meta name="keywords" content="少司缘吧,原神少司缘,少司缘同人,原神同人,原神角色攻略">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary: #6d28d9;
+            --primary-light: #a78bfa;
+            --secondary: #fbbf24;
+            --bg-body: #f8fafc;
+            --bg-card: #ffffff;
+            --text-main: #1e293b;
+            --text-sub: #64748b;
+            --border: #e2e8f0;
+            --radius: 12px;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding-bottom: 40px;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: var(--primary);
+        }
+
+        /* Header */
+        header {
+            background-color: var(--bg-card);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 24px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-sub);
+        }
+
+        nav a.active, nav a:hover {
+            color: var(--primary);
+        }
+
+        .search-box {
+            display: flex;
+            align-items: center;
+            background: var(--bg-body);
+            border-radius: 20px;
+            padding: 6px 16px;
+            border: 1px solid var(--border);
+        }
+
+        .search-box input {
+            border: none;
+            background: transparent;
+            outline: none;
+            width: 150px;
+            font-size: 0.9rem;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #4c1d95 0%, #8b5cf6 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+            font-weight: 800;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .hero-tags {
+            margin-top: 24px;
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: rgba(255,255,255,0.2);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            backdrop-filter: blur(4px);
+        }
+
+        /* Main Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            display: grid;
+            grid-template-columns: 240px 1fr;
+            gap: 32px;
+        }
+
+        /* Sidebar */
+        aside {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .widget {
+            background: var(--bg-card);
+            border-radius: var(--radius);
+            padding: 20px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+        }
+
+        .widget h3 {
+            font-size: 1.1rem;
+            margin-bottom: 16px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--bg-body);
+            color: var(--text-main);
+        }
+
+        .rank-list {
+            list-style: none;
+        }
+
+        .rank-list li {
+            display: flex;
+            align-items: center;
+            padding: 8px 0;
+            border-bottom: 1px dashed var(--border);
+        }
+
+        .rank-list li:last-child {
+            border-bottom: none;
+        }
+
+        .rank-num {
+            width: 24px;
+            height: 24px;
+            background: var(--bg-body);
+            color: var(--text-sub);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            margin-right: 12px;
+            font-weight: bold;
+        }
+
+        .rank-list li:nth-child(1) .rank-num { background: #fee2e2; color: #ef4444; }
+        .rank-list li:nth-child(2) .rank-num { background: #ffedd5; color: #f97316; }
+        .rank-list li:nth-child(3) .rank-num { background: #fef9c3; color: #eab308; }
+
+        .rank-info {
+            flex: 1;
+        }
+
+        .rank-title {
+            font-size: 0.95rem;
+            display: block;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 160px;
+        }
+
+        .rank-meta {
+            font-size: 0.75rem;
+            color: var(--text-sub);
+        }
+
+        /* Content Area */
+        .content-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+        }
+
+        .tabs {
+            display: flex;
+            gap: 20px;
+        }
+
+        .tab {
+            padding-bottom: 8px;
+            color: var(--text-sub);
+            font-weight: 500;
+            cursor: pointer;
+            border-bottom: 2px solid transparent;
+        }
+
+        .tab.active {
+            color: var(--primary);
+            border-bottom-color: var(--primary);
+        }
+
+        /* Filter Bar */
+        .filter-bar {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 24px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 6px 14px;
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            background: var(--bg-card);
+            color: var(--text-sub);
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        /* Post Grid */
+        .post-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .post-card {
+            background: var(--bg-card);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid var(--border);
+        }
+
+        .post-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-image {
+            width: 100%;
+            height: 180px;
+            background-color: #e2e8f0;
+            position: relative;
+        }
+
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .card-tag {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: rgba(0,0,0,0.6);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+        }
+
+        .card-body {
+            padding: 16px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-title {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            line-height: 1.4;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .card-desc {
+            font-size: 0.85rem;
+            color: var(--text-sub);
+            margin-bottom: 16px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            flex: 1;
+        }
+
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.8rem;
+            color: var(--text-sub);
+            padding-top: 12px;
+            border-top: 1px solid var(--bg-body);
+        }
+
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .avatar {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--primary-light);
+        }
+
+        /* Latest List Style */
+        .list-view .post-grid {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .list-view .post-card {
+            flex-direction: row;
+            height: 140px;
+        }
+
+        .list-view .card-image {
+            width: 200px;
+            height: 100%;
+            flex-shrink: 0;
+        }
+
+        .list-view .card-body {
+            padding: 16px 24px;
+            justify-content: center;
+        }
+
+        /* Pagination */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 40px;
+        }
+
+        .page-item {
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            color: var(--text-main);
+            font-size: 0.9rem;
+        }
+
+        .page-item.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        .page-item:hover:not(.active) {
+            background: var(--bg-body);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--bg-card);
+            border-top: 1px solid var(--border);
+            padding: 40px 20px;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .copyright {
+            color: var(--text-sub);
+            font-size: 0.9rem;
+        }
+
+        .footer-links a {
+            margin-left: 20px;
+            color: var(--text-sub);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+
+            nav {
+                display: none;
+                position: absolute;
+                top: 64px;
+                left: 0;
+                width: 100%;
+                background: var(--bg-card);
+                padding: 20px;
+                box-shadow: var(--shadow);
+                flex-direction: column;
+            }
+
+            nav.open {
+                display: flex;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .list-view .post-card {
+                height: auto;
+            }
+
+            .list-view .card-image {
+                width: 100%;
+                height: 180px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="header-container">
+        <a href="#" class="logo">
+            <span>少司缘吧</span>
+        </a>
+        <button class="mobile-menu-btn" onclick="document.querySelector('nav').classList.toggle('open')">☰</button>
+        <nav>
+            <ul>
+                <li><a href="#" class="active">首页</a></li>
+                <li><a href="#">图库</a></li>
+                <li><a href="#">视频</a></li>
+                <li><a href="#">小说</a></li>
+                <li><a href="#">百科</a></li>
+                <li><a href="#">排行榜</a></li>
+            </ul>
+        </nav>
+        <div class="search-box">
+            <input type="text" placeholder="搜索少司缘...">
+            <span style="cursor:pointer">🔍</span>
+        </div>
+    </div>
+</header>
+
+<div class="hero">
+    <h1>少司缘：祈愿中的美好邂逅</h1>
+    <p>这里是原神角色少司缘（Shao Siyuan）的专属同人社区。分享你的绘画、创作与攻略，遇见同好。</p>
+    <div class="hero-tags">
+        <span class="tag">#少司缘同人</span>
+        <span class="tag">#璃月七星</span>
+        <span class="tag">#神女劈观</span>
+        <span class="tag">#卡池分析</span>
+    </div>
+</div>
+
+<main class="container">
+    <!-- Sidebar -->
+    <aside>
+        <div class="widget">
+            <h3>热门话题</h3>
+            <ul class="rank-list">
+                <li>
+                    <span class="rank-num">1</span>
+                    <div class="rank-info">
+                        <span class="rank-title">少司缘技能加点攻略</span>
+                        <span class="rank-meta">1.2w 阅读</span>
+                    </div>
+                </li>
+                <li>
+                    <span class="rank-num">2</span>
+                    <div class="rank-info">
+                        <span class="rank-title">少司缘同人插画大赛</span>
+                        <span class="rank-meta">8900 阅读</span>
+                    </div>
+                </li>
+                <li>
+                    <span class="rank-num">3</span>
+                    <div class="rank-info">
+                        <span class="rank-title">少司缘御三家搭配推荐</span>
+                        <span class="rank-meta">7600 阅读</span>
+                    </div>
+                </li>
+                <li>
+                    <span class="rank-num">4</span>
+                    <div class="rank-info">
+                        <span class="rank-title">如何获取少司缘角色</span>
+                        <span class="rank-meta">5400 阅读</span>
+                    </div>
+                </li>
+                <li>
+                    <span class="rank-num">5</span>
+                    <div class="rank-info">
+                        <span class="rank-title">少司缘背景故事解析</span>
+                        <span class="rank-meta">4200 阅读</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="widget">
+            <h3>推荐标签</h3>
+            <div style="display:flex; flex-wrap:wrap; gap:8px;">
+                <span class="tag" style="background:#f3e8ff; color:#6b21a8;">手绘</span>
+                <span class="tag" style="background:#fce7f3; color:#be185d;">Q版</span>
+                <span class="tag" style="background:#ffedd5; color:#c2410c;">建模</span>
+                <span class="tag" style="background:#e0f2fe; color:#0369a1;">剧情</span>
+                <span class="tag" style="background:#dcfce7; color:#15803d;">日常</span>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <section class="content-area">
+        <div class="content-header">
+            <h2>最新动态</h2>
+            <div class="tabs">
+                <div class="tab active">综合</div>
+                <div class="tab">图片</div>
+                <div class="tab">视频</div>
+                <div class="tab">小说</div>
+            </div>
+        </div>
+
+        <div class="filter-bar">
+            <button class="filter-btn active">全部</button>
+            <button class="filter-btn">原创</button>
+            <button class="filter-btn">二创</button>
+            <button class="filter-btn">搬运</button>
+            <button class="filter-btn">求助</button>
+        </div>
+
+        <div class="post-grid" id="postList">
+            <!-- Card 1 -->
+            <article class="post-card">
+                <div class="card-image">
+                    <span class="card-tag">插画</span>
+                    <img src="https://picsum.photos/seed/siyuan1/400/300" alt="少司缘同人图">
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">【原创】少司缘的初雪时刻，治愈系插画分享</h3>
+                    <p class="card-desc">尝试了新的上色风格，希望能还原少司缘那种灵动又温暖的感觉。</p>
+                    <div class="card-footer">
+                        <div class="user-info">
+                            <div class="avatar"></div>
+                            <span>绘梦师_小圆</span>
+                        </div>
+                        <span>2小时前</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 2 -->
+            <article class="post-card">
+                <div class="card-image">
+                    <span class="card-tag">视频</span>
+                    <img src="https://picsum.photos/seed/siyuan2/400/300" alt="少司缘动态图">
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">【视频】少司缘配队实战演示：速切流玩法教学</h3>
+                    <p class="card-desc">这套配队伤害很高，但操作难度也不低，适合有一定基础的玩家。</p>
+                    <div class="card-footer">
+                        <div class="user-info">
+                            <div class="avatar"></div>
+                            <span>提瓦特攻略组</span>
+                        </div>
+                        <span>5小时前</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 3 -->
+            <article class="post-card">
+                <div class="card-image">
+                    <span class="card-tag">小说</span>
+                    <img src="https://picsum.photos/seed/siyuan3/400/300" alt="少司缘小说封面">
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">【小说】《璃月旧事：少司缘篇》第一章发布</h3>
+                    <p class="card-desc">璃月七星之一少司缘的幕后故事，探讨她作为“小神明”的责任与成长。</p>
+                    <div class="card-footer">
+                        <div class="user-info">
+                            <div class="avatar"></div>
+                            <span>书虫阿离</span>
+                        </div>
+                        <span>1天前</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 4 -->
+            <article class="post-card">
+                <div class="card-image">
+                    <span class="card-tag">讨论</span>
+                    <img src="https://picsum.photos/seed/siyuan4/400/300" alt="少司缘讨论">
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">大家觉得少司缘的命座设计如何？</h3>
+                    <p class="card-desc">命座4和命座6的改动让她的实战能力提升了很多，但也增加了成本。</p>
+                    <div class="card-footer">
+                        <div class="user-info">
+                            <div class="avatar"></div>
+                            <span>原神玩家老王</span>
+                        </div>
+                        <span>1天前</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 5 -->
+            <article class="post-card">
+                <div class="card-image">
+                    <span class="card-tag">同人</span>
+                    <img src="https://picsum.photos/seed/siyuan5/400/300" alt="少司缘手办">
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">【晒图】刚到的少司缘限定手办，细节满分</h3>
+                    <p class="card-desc">官方手办质感真的不错，尤其是发饰和衣服的刺绣，爱了爱了。</p>
+                    <div class="card-footer">
+                        <div class="user-info">
+                            <div class="avatar"></div>
+                            <span>收藏家小张</span>
+                        </div>
+                        <span>2天前</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 6 -->
+            <article class="post-card">
+                <div class="card-image">
+                    <span class="card-tag">攻略</span>
+                    <img src="https://picsum.photos/seed/siyuan6/400/300" alt="少司缘圣遗物">
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">圣遗物选择指南：绝缘之旗印还是沉沦之钟？</h3>
+                    <p class="card-desc">详细对比了两种主流配装方案，希望能帮到抽到少司缘的玩家。</p>
+                    <div class="card-footer">
+                        <div class="user-info">
+                            <div class="avatar"></div>
+                            <span>深渊行者</span>
+                        </div>
+                        <span>3天前</span>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        <div class="pagination">
+            <div class="page-item active">1</div>
+            <div class="page-item">2</div>
+            <div class="page-item">3</div>
+            <div class="page-item">...</div>
+            <div class="page-item">10</div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="footer-content">
+        <div class="copyright">
+            &copy; 2023 少司缘吧 - 原神同人社区. All rights reserved.
+        </div>
+        <div class="footer-links">
+            <a href="#">关于我们</a>
+            <a href="#">社区公约</a>
+            <a href="#">免责声明</a>
+            <a href="#">联系管理员</a>
+        </div>
+    </div>
+</footer>
+
+</body>
+                              </html>
