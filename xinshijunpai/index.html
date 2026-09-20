@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="新式军牌是中国人民解放军现行的车辆号牌系统。本文详细介绍新式军牌的标识特征、分类规则、更换背景及演变历史，帮助用户准确识别军车身份。">
+    <meta name="keywords" content="新式军牌, 军车号牌, 中国人民解放军, 军牌识别, 军牌分类, 车辆号牌">
+    <title>新式军牌-中国人民解放军车辆号牌识别与分类详解</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-red: #B81212;
+            --primary-dark: #7a0a0a;
+            --primary-gold: #C6A96B;
+            --text-main: #333333;
+            --text-secondary: #666666;
+            --bg-body: #f4f6f9;
+            --bg-white: #ffffff;
+            --border-color: #e1e4e8;
+            --spacing-unit: 16px;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg-body);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            width: 100%;
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* Header */
+        header {
+            background-color: var(--bg-white);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--primary-red);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 24px;
+        }
+
+        nav a {
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--text-main);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-red);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #fff5f5 0%, #ffffff 100%);
+            padding: 60px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .hero-content {
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 36px;
+            margin-bottom: 16px;
+            color: var(--text-main);
+        }
+
+        .hero p {
+            font-size: 16px;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Main Content Layout */
+        main {
+            padding: 40px 0;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 32px;
+        }
+
+        @media (max-width: 768px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+            .header-inner {
+                flex-direction: column;
+                height: auto;
+                padding: 16px 0;
+            }
+            nav ul {
+                margin-top: 12px;
+                gap: 16px;
+            }
+        }
+
+        /* Article Section */
+        .article-section {
+            background: var(--bg-white);
+            padding: 32px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .section-title {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 24px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--border-color);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -2px;
+            width: 60px;
+            height: 2px;
+            background-color: var(--primary-red);
+        }
+
+        .intro-text {
+            margin-bottom: 24px;
+            text-align: justify;
+        }
+
+        .intro-text p {
+            margin-bottom: 12px;
+        }
+
+        /* Visual Showcase */
+        .visual-showcase {
+            margin: 32px 0;
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 6px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .plate-card {
+            width: 280px;
+            height: 100px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            position: relative;
+            background: white;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-family: "Arial Black", sans-serif;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .plate-card::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 12px;
+            background-color: var(--primary-red);
+        }
+
+        .plate-card::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            width: 12px;
+            background-color: var(--primary-red);
+        }
+
+        .plate-letters {
+            font-size: 32px;
+            letter-spacing: 2px;
+            color: var(--primary-red);
+            font-weight: 900;
+        }
+
+        .plate-numbers {
+            font-size: 28px;
+            letter-spacing: 1px;
+            color: var(--text-main);
+            margin-top: 4px;
+        }
+
+        .plate-desc {
+            font-size: 12px;
+            color: var(--text-secondary);
+            margin-top: 4px;
+        }
+
+        /* Classification Table */
+        .classification-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 16px;
+        }
+
+        .classification-table th, .classification-table td {
+            border: 1px solid var(--border-color);
+            padding: 12px;
+            text-align: left;
+        }
+
+        .classification-table th {
+            background-color: #f8f9fa;
+            font-weight: 600;
+            width: 25%;
+        }
+
+        .classification-table tr:nth-child(even) {
+            background-color: #fafafa;
+        }
+
+        .classification-table tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        /* Sidebar */
+        aside {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .info-card {
+            background: var(--bg-white);
+            padding: 24px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .info-list li {
+            margin-bottom: 12px;
+            padding-bottom: 12px;
+            border-bottom: 1px dashed var(--border-color);
+        }
+
+        .info-list li:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .info-list strong {
+            display: block;
+            color: var(--primary-red);
+            font-size: 15px;
+            margin-bottom: 4px;
+        }
+
+        .info-list span {
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            margin-top: 40px;
+        }
+
+        .faq-item {
+            background: var(--bg-white);
+            margin-bottom: 12px;
+            border-radius: 4px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .faq-question {
+            padding: 16px 20px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #fff;
+            transition: background 0.2s;
+        }
+
+        .faq-question:hover {
+            background-color: #f9f9f9;
+        }
+
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s ease;
+            color: var(--text-secondary);
+            font-size: 15px;
+            background-color: #fafafa;
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 16px 20px;
+            max-height: 200px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .faq-item.active .faq-question {
+            color: var(--primary-red);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2c3e50;
+            color: #bdc3c7;
+            padding: 40px 0;
+            margin-top: 60px;
+            text-align: center;
+        }
+
+        footer p {
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+
+        .footer-links a {
+            margin: 0 10px;
+            font-size: 14px;
+        }
+
+        .footer-links a:hover {
+            color: #fff;
+        }
+
+        /* Utility */
+        .badge {
+            display: inline-block;
+            padding: 2px 8px;
+            font-size: 12px;
+            background-color: #eee;
+            border-radius: 4px;
+            margin-right: 4px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container header-inner">
+        <div class="logo">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+            </svg>
+            <span>军牌百科</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#" class="active">新式军牌</a></li>
+                <li><a href="#">历史演变</a></li>
+                <li><a href="#">识别指南</a></li>
+                <li><a href="#">常见问题</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<section class="hero">
+    <div class="container hero-content">
+        <h1>中国人民解放军新式军牌</h1>
+        <p>全面解析新式军牌的标识特征、分类规则及背景更换历史，帮助公众准确识别军车身份。</p>
+    </div>
+</section>
+
+<main class="container">
+    <div class="content-grid">
+        <!-- Left Content -->
+        <div class="main-column">
+            <article class="article-section">
+                <h2 class="section-title">什么是新式军牌？</h2>
+                <div class="intro-text">
+                    <p><strong>新式军牌</strong>，全称为“中国人民解放军第二代军车号牌”，是中国人民解放军自2004年5月1日起开始启用的车辆号牌系统。该系统取代了此前使用多年的第一代（87式）军车号牌，是解放军车辆管理现代化的重要标志。</p>
+                    <p>新式军牌的设计更加规范，防伪技术更高，旨在有效遏制伪造、套用军车号牌等违法行为，提升军队形象。其核心特征在于采用了<strong>“六层底色”</strong>的更换背景设计。</p>
+                </div>
+
+                <h2 class="section-title">标识特征与视觉识别</h2>
+                <p>新式军牌主要由汉字、字母和数字组成，整体结构清晰，层次分明。</p>
+                
+                <div class="visual-showcase">
+                    <div class="plate-card">
+                        <div class="plate-letters">军</div>
+                        <div class="plate-numbers">J01001</div>
+                        <div class="plate-desc">总部首长用车</div>
+                    </div>
+                    <div class="plate-card">
+                        <div class="plate-letters">O</div>
+                        <div class="plate-numbers">A12345</div>
+                        <div class="plate-desc">军车监察专用</div>
+                    </div>
+                    <div class="plate-card">
+                        <div class="plate-letters">甲</div>
+                        <div class="plate-numbers">B12345</div>
+                        <div class="plate-desc">沈阳军区</div>
+                    </div>
+                    <div class="plate-card">
+                        <div class="plate-letters">北</div>
+                        <div class="plate-numbers">C12345</div>
+                        <div class="plate-desc">北京军区</div>
+                    </div>
+                </div>
+
+                <p><strong>主要识别点：</strong></p>
+                <ul>
+                    <li><strong>汉字标识：</strong> 军牌开头必须有一个汉字，代表所属的军种或部门，如“军”、“甲”、“乙”、“北”、“南”、“空”、“海”、“武”等。</li>
+                    <li><strong>字母标识：</strong> 军牌中间的字母代表特定的职能或地区。例如，“O”通常代表军车监察，“A”代表总部，“B”代表军区领导机关等。</li>
+                    <li><strong>六层底色：</strong> 新式军牌最大的视觉变化是背景由单一的绿色变为<strong>六层不同颜色的渐变底色</strong>。这种设计增加了防伪难度，使得伪造变得非常困难。底色的变化对应了不同的汉字和字母组合。</li>
+                </ul>
+
+                <h2 class="section-title">详细分类体系</h2>
+                <p>新式军牌按照用途和所属单位进行了严格的分类管理。以下是主要的分类结构：</p>
+
+                <table class="classification-table">
+                    <thead>
+                        <tr>
+                            <th>分类名称</th>
+                            <th>字母代码</th>
+                            <th>适用范围与说明</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>总部</td>
+                            <td>军、O</td>
+                            <td>“军”为总部首长用车；“O”为军车监察专用车。</td>
+                        </tr>
+                        <tr>
+                            <td>大军区</td>
+                            <td>甲、乙、丙、丁</td>
+                            <td>代表沈阳、北京、兰州、济南、南京、广州、成都七大军区。</td>
+                        </tr>
+                        <tr>
+                            <td>军兵种</td>
+                            <td>空、海、北、南</td>
+                            <td>代表空军、海军、北京军区（部分）、沈阳军区（部分）等特定兵种。</td>
+                        </tr>
+                        <tr>
+                            <td>武装警察</td>
+                            <td>WJ</td>
+                            <td>武警部队专用车辆，格式为“WJ”+数字+汉字。</td>
+                        </tr>
+                        <tr>
+                            <td>通用</td>
+                            <td>地方</td>
+                            <td>军队执行非军事任务时使用的民用号牌，通常带有“军”字标识。</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </article>
+
+            <div class="faq-section">
+                <h2 class="section-title">常见问题 (FAQ)</h2>
+                
+                <div class="faq-item">
+                    <div class="faq-question">新式军牌和旧式（87式）军牌有什么区别？</div>
+                    <div class="faq-answer">
+                        最显著的区别在于<strong>背景颜色</strong>。87式军牌背景是单一的橄榄绿色，而新式军牌背景是六层不同颜色的渐变底色。此外，新式军牌在字体、字体间距以及防伪技术（如激光全息烫印）上也有大幅提升。
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">如何辨别伪造的新式军牌？</div>
+                    <div class="faq-answer">
+                        伪造的军牌通常难以模仿六层底色的渐变效果，且颜色往往不够自然。同时，新式军牌的字体笔画细节（如某些笔画的长短）与标准字体有细微差别。最权威的辨别方法是查阅官方发布的号牌样本。
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">“O”开头的军牌代表什么？</div>
+                    <div class="faq-answer">
+                        “O”开头的军牌代表<strong>军车监察专用</strong>。这是专门用于军队内部监察、纠察车辆使用的号牌，用于监督军车执行纪律情况，具有特殊的执法性质。
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Sidebar -->
+        <aside class="sidebar-column">
+            <div class="info-card">
+                <h3 class="section-title" style="font-size: 18px; margin-bottom: 16px; border-bottom: none;">快速识别指南</h3>
+                <ul class="info-list">
+                    <li>
+                        <strong>总部用车</strong>
+                        <span>以“军”字开头，代表中央军委及各总部首长。</span>
+                    </li>
+                    <li>
+                        <strong>军区机关</strong>
+                        <span>以“甲、乙、丙、丁”开头，对应七大军区。</span>
+                    </li>
+                    <li>
+                        <strong>军兵种</strong>
+                        <span>以“空、海、北、南”开头，代表特定兵种单位。</span>
+                    </li>
+                    <li>
+                        <strong>武警部队</strong>
+                        <span>以“WJ”开头，格式与普通军牌不同。</span>
+                    </li>
+                    <li>
+                        <strong>地方车牌</strong>
+                        <span>军队驻地方机构车辆，格式为“军”+数字+“地方”。</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="info-card">
+                <h3 class="section-title" style="font-size: 18px; margin-bottom: 16px; border-bottom: none;">相关法规</h3>
+                <p style="font-size: 14px; color: #666; line-height: 1.8;">
+                    根据《中国人民解放军车辆号牌管理规定》，伪造、变造或者使用伪造、变造的军车号牌属于严重违法行为。军车驾驶员必须严格遵守号牌管理规定，确保号牌清晰、完整、无遮挡。
+                </p>
+            </div>
+        </aside>
+    </div>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-links">
+            <a href="#">关于我们</a>
+            <a href="#">联系方式</a>
+            <a href="#">免责声明</a>
+            <a href="#">隐私政策</a>
+        </div>
+        <p style="margin-top: 16px;">本站内容仅供科普参考，不作为执法依据。</p>
+        <p>&copy; 2023 军牌百科网. All Rights Reserved.</p>
+    </div>
+</footer>
+
+<script>
+    // 简单的 FAQ 折叠交互逻辑
+    document.addEventListener('DOMContentLoaded', function() {
+        const faqItems = document.querySelectorAll('.faq-item');
+
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            question.addEventListener('click', () => {
+                // 如果需要手风琴效果（点击一个关闭其他），取消下面注释
+                // faqItems.forEach(i => {
+                //     if (i !== item) i.classList.remove('active');
+                // });
+                
+                item.classList.toggle('active');
+            });
+        });
+    });
+</script>
+
+</body>
+</html>
