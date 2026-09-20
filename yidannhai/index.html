@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="一耽女孩 - 专注女性成长、自我提升与情感健康的综合性生活方式指南。提供心理健康、职场进阶、情感咨询及个人修养相关内容，帮助现代女性实现内外兼修。">
+    <meta name="keywords" content="一耽女孩,女性成长,自我提升,心理健康,情感咨询,生活方式">
+    <title>一耽女孩-女性成长与自我提升的综合指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #d48c9e;
+            --secondary-color: #f7e1e6;
+            --text-dark: #333333;
+            --text-gray: #666666;
+            --bg-light: #fdf6f8;
+            --white: #ffffff;
+            --shadow-sm: 0 2px 8px rgba(212, 140, 158, 0.1);
+            --shadow-md: 0 4px 12px rgba(212, 140, 158, 0.15);
+            --radius: 8px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Utility */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background-color: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-gray);
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--white);
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--text-dark);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-dark);
+            position: relative;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--primary-color);
+            transition: width 0.3s;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            background: none;
+            border: none;
+            color: var(--text-dark);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #fff0f3 0%, #fff 100%);
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: var(--text-dark);
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            color: var(--text-gray);
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-group {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: var(--white);
+            box-shadow: 0 4px 15px rgba(212, 140, 158, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(212, 140, 158, 0.5);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+
+        /* Features Section */
+        .features {
+            padding: 80px 0;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-sm);
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            display: inline-block;
+            padding: 15px;
+            background-color: var(--secondary-color);
+            border-radius: 50%;
+        }
+
+        .feature-card h3 {
+            margin-bottom: 15px;
+            font-size: 1.25rem;
+        }
+
+        .feature-card p {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+        }
+
+        /* Article Grid */
+        .articles {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+
+        .article-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .article-card {
+            border: 1px solid #eee;
+            border-radius: var(--radius);
+            overflow: hidden;
+            transition: box-shadow 0.3s;
+        }
+
+        .article-card:hover {
+            box-shadow: var(--shadow-md);
+        }
+
+        .article-image {
+            width: 100%;
+            height: 200px;
+            background-color: #f0f0f0;
+            object-fit: cover;
+        }
+
+        .article-content {
+            padding: 20px;
+        }
+
+        .article-tag {
+            font-size: 0.8rem;
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 10px;
+            display: block;
+            text-transform: uppercase;
+        }
+
+        .article-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+
+        .article-card p {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+
+        .read-more {
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* Quote Section */
+        .quote-section {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .quote-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .quote-content blockquote {
+            font-size: 1.5rem;
+            font-style: italic;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .quote-content cite {
+            font-size: 1rem;
+            opacity: 0.8;
+        }
+
+        /* FAQ Section */
+        .faq {
+            padding: 80px 0;
+        }
+
+        .faq-item {
+            background: var(--white);
+            margin-bottom: 15px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-sm);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .faq-question:hover {
+            background-color: #fafafa;
+        }
+
+        .faq-answer {
+            padding: 0 20px 20px;
+            color: var(--text-gray);
+            display: none;
+            border-top: 1px solid #f0f0f0;
+            padding-top: 15px;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question::after {
+            content: '-';
+        }
+
+        .faq-item.active .faq-question::before {
+            content: '+';
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2c2c2c;
+            color: #ccc;
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: var(--white);
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #444;
+            padding-top: 20px;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-wrapper {
+                height: 60px;
+            }
+
+            nav ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background-color: var(--white);
+                padding: 20px;
+                box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            }
+
+            nav ul.show {
+                display: flex;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .cta-group {
+                flex-direction: column;
+            }
+            
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">
+                <span style="font-size: 1.8rem;">🌸</span>
+                一耽女孩
+            </a>
+            <button class="mobile-menu-btn" aria-label="菜单">☰</button>
+            <nav>
+                <ul id="nav-list">
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#growth">成长</a></li>
+                    <li><a href="#wellness">身心健康</a></li>
+                    <li><a href="#style">生活方式</a></li>
+                    <li><a href="#about">关于我们</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-content">
+                <h1>遇见更好的自己</h1>
+                <p>一耽女孩致力于为现代女性提供实用的自我提升指南、心理健康建议与优雅的生活方式。在这里，我们关注你的内心成长与外在魅力。</p>
+                <div class="cta-group">
+                    <a href="#growth" class="btn btn-primary">探索成长课程</a>
+                    <a href="#wellness" class="btn btn-outline">阅读心理专栏</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features -->
+        <section class="features" id="growth">
+            <div class="container">
+                <h2 class="section-title">核心关注领域</h2>
+                <p class="section-subtitle">全方位覆盖女性在不同人生阶段的需求，提供专业且温暖的建议。</p>
+                
+                <div class="features-grid">
+                    <article class="feature-card">
+                        <div class="feature-icon">🧠</div>
+                        <h3>自我认知与成长</h3>
+                        <p>通过心理学工具与个人复盘方法，帮助女性建立自信，明确人生目标，实现内在的深度觉醒。</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">🧘‍♀️</div>
+                        <h3>情绪管理与疗愈</h3>
+                        <p>提供科学的压力缓解技巧与情绪调节方法，营造积极的心理环境，告别内耗与焦虑。</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">👗</div>
+                        <h3>生活美学与穿搭</h3>
+                        <p>分享色彩搭配、家居美学及日常穿搭灵感，提升生活品质，展现独特的个人风格。</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">💼</div>
+                        <h3>职场进阶指南</h3>
+                        <p>探讨职场沟通、职业规划与高效工作习惯，助力女性在职场中从容应对挑战。</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quote -->
+        <section class="quote-section">
+            <div class="container quote-content">
+                <blockquote>
+                    “优雅不是一种姿态，而是一种心境。愿每一位女孩都能在岁月中从容绽放。”
+                </blockquote>
+                <cite>—— 一耽女孩</cite>
+            </div>
+        </section>
+
+        <!-- Articles -->
+        <section class="articles" id="style">
+            <div class="container">
+                <h2 class="section-title">精选内容</h2>
+                <p class="section-subtitle">深度阅读，滋养心灵。我们精选了关于生活与成长的优质文章。</p>
+
+                <div class="article-grid">
+                    <article class="article-card">
+                        <img src="https://picsum.photos/seed/flower/400/250" alt="女性阅读" class="article-image">
+                        <div class="article-content">
+                            <span class="article-tag">生活方式</span>
+                            <h3>如何打造充满书香气息的居家角落</h3>
+                            <p>好的环境能滋养人的心灵。本文教你利用简单的装饰与植物，打造一个安静阅读的私人空间。</p>
+                            <a href="#" class="read-more">阅读全文 →</a>
+                        </div>
+                    </article>
+
+                    <article class="article-card">
+                        <img src="https://picsum.photos/seed/mind/400/250" alt="心理健康" class="article-image">
+                        <div class="article-content">
+                            <span class="article-tag">心理健康</span>
+                            <h3>告别讨好型人格：学会温和地设立边界</h3>
+                            <p>学会拒绝不是冷漠，而是为了更好地爱自己。探讨如何在保持友善的同时，保护自己的情感边界。</p>
+                            <a href="#" class="read-more">阅读全文 →</a>
+                        </div>
+                    </article>
+
+                    <article class="article-card">
+                        <img src="https://picsum.photos/seed/suit/400/250" alt="职场穿搭" class="article-image">
+                        <div class="article-content">
+                            <span class="article-tag">职场穿搭</span>
+                            <h3>职场通勤穿搭：舒适与专业的平衡艺术</h3>
+                            <p>无论面对何种会议，一套得体的穿搭能为你加分。推荐几款适合日常通勤的高品质单品。</p>
+                            <a href="#" class="read-more">阅读全文 →</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="faq" id="wellness">
+            <div class="container">
+                <h2 class="section-title">常见问题</h2>
+                <div class="faq-item">
+                    <div class="faq-question">一耽女孩的内容主要面向什么人群？</div>
+                    <div class="faq-answer">
+                        <p>我们主要面向25-45岁之间，关注自我成长、追求生活品质的都市女性。无论你是刚步入职场的新人，还是寻求生活平衡的职场妈妈，这里都有适合你的内容。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">如何加入我们的读者社区？</div>
+                    <div class="faq-answer">
+                        <p>您可以通过页面底部的联系方式与我们取得联系，或者关注我们的官方社交媒体账号。我们会定期举办线上读书会与成长分享会。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">网站上的文章都是原创的吗？</div>
+                    <div class="faq-answer">
+                        <p>是的，我们致力于提供高质量的原创内容。同时，我们会精选行业内权威的心理学研究成果与生活方式指南进行深度解读与整理。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">订阅电子周刊需要付费吗？</div>
+                    <div class="faq-answer">
+                        <p>我们的核心周刊内容是完全免费的。此外，我们也提供一些付费的深度工作坊与咨询服务，具体详情请查看相关页面。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="about">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>关于一耽女孩</h4>
+                    <p style="font-size: 0.9rem; line-height: 1.6;">
+                        一耽女孩是一个专注于女性自我提升与生活美学的线上社区。我们相信每个女性都拥有无限的潜能，致力于提供温暖、专业的内容支持。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#">成长课程</a></li>
+                        <li><a href="#">心理测试</a></li>
+                        <li><a href="#">穿搭指南</a></li>
+                        <li><a href="#">最新文章</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系我们</h4>
+                    <ul>
+                        <li>邮箱：contact@yidanggirl.com</li>
+                        <li>地址：上海市静安区创意园A栋</li>
+                        <li>微信：yidanggirl_official</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 一耽女孩 版权所有. 保留所有权利。</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const menuBtn = document.querySelector('.mobile-menu-btn');
+        const navList = document.querySelector('#nav-list');
+
+        menuBtn.addEventListener('click', () => {
+            navList.classList.toggle('show');
+        });
+
+        // FAQ Accordion
+        const faqItems = document.querySelectorAll('.faq-item');
+
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            question.addEventListener('click', () => {
+                // Close other items
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+                // Toggle current item
+                item.classList.toggle('active');
+            });
+        });
+
+        // Smooth Scroll for Anchor Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                    // Close mobile menu if open
+                    navList.classList.remove('show');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
