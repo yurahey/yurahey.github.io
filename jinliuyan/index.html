@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="金柳妍个人资料、演艺经历、代表作品及最新动态。关注这位多才多艺的艺人，获取她的演艺事业、影视作品及粉丝互动信息。">
+    <meta name="keywords" content="金柳妍, 金柳妍个人资料, 金柳妍演艺经历, 金柳妍代表作品, 金柳妍最新动态">
+    <title>金柳妍-艺人档案与作品展示平台</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #d4a373;
+            --secondary-color: #faedcd;
+            --text-dark: #2b2d42;
+            --text-gray: #6c757d;
+            --bg-light: #fefae0;
+            --white: #ffffff;
+            --spacing-unit: 1rem;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+            object-fit: cover;
+        }
+
+        .container {
+            width: 90%;
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* Header & Nav */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            letter-spacing: 1px;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-dark);
+            font-size: 1rem;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        .btn-subscribe {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 0.5rem 1.2rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+
+        .btn-subscribe:hover {
+            background-color: #b08968;
+            color: var(--white);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://picsum.photos/seed/golden/1600/900') no-repeat center center/cover;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            opacity: 0.9;
+        }
+
+        .hero-tags span {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin: 0 4px;
+        }
+
+        /* Profile Section */
+        .profile-section {
+            padding: 4rem 0;
+            background-color: var(--white);
+        }
+
+        .profile-grid {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .profile-avatar {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            border: 5px solid var(--secondary-color);
+            margin: 0 auto 2rem;
+            overflow: hidden;
+        }
+
+        .profile-info h2 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        .profile-bio {
+            margin-bottom: 1.5rem;
+            color: var(--text-gray);
+        }
+
+        .info-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            font-size: 0.95rem;
+        }
+
+        .info-item strong {
+            display: block;
+            color: var(--text-dark);
+            margin-bottom: 0.2rem;
+        }
+
+        .info-item span {
+            color: var(--text-gray);
+        }
+
+        /* Works Section */
+        .works-section {
+            padding: 4rem 0;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+            margin-bottom: 2rem;
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 1rem;
+        }
+
+        .section-header h2 {
+            font-size: 2rem;
+            color: var(--text-dark);
+        }
+
+        .section-header a {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        .works-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .work-card {
+            background: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .work-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .work-poster {
+            height: 400px;
+            width: 100%;
+            position: relative;
+        }
+
+        .work-poster img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .work-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .work-card:hover .work-overlay {
+            opacity: 1;
+        }
+
+        .play-btn {
+            background: var(--white);
+            color: var(--primary-color);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .work-info {
+            padding: 1.5rem;
+        }
+
+        .work-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .work-meta {
+            font-size: 0.9rem;
+            color: var(--text-gray);
+            margin-bottom: 1rem;
+        }
+
+        .work-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tag {
+            background-color: var(--secondary-color);
+            color: var(--text-dark);
+            font-size: 0.75rem;
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+
+        /* News Section */
+        .news-section {
+            padding: 4rem 0;
+            background-color: var(--white);
+        }
+
+        .news-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .news-item {
+            display: flex;
+            gap: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .news-date {
+            flex-shrink: 0;
+            width: 80px;
+            text-align: center;
+        }
+
+        .date-day {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            line-height: 1;
+        }
+
+        .date-month {
+            font-size: 0.9rem;
+            color: var(--text-gray);
+            text-transform: uppercase;
+        }
+
+        .news-content h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            line-height: 1.4;
+        }
+
+        .news-content h3:hover {
+            color: var(--primary-color);
+        }
+
+        .news-excerpt {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .news-meta {
+            font-size: 0.85rem;
+            color: #999;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--text-dark);
+            color: #ccc;
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-brand h3 {
+            color: var(--white);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-brand p {
+            max-width: 300px;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .footer-col h4 {
+            color: var(--white);
+            margin-bottom: 1.2rem;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-col ul li a {
+            font-size: 0.9rem;
+            color: #ccc;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.85rem;
+            color: #777;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-wrapper {
+                flex-direction: column;
+                height: auto;
+                padding: 1rem 0;
+            }
+
+            nav ul {
+                margin: 1rem 0;
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .profile-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .profile-avatar {
+                margin: 0 auto 1.5rem;
+            }
+
+            .info-list {
+                text-align: left;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <div class="logo">JIN LIUYAN</div>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#profile">个人资料</a></li>
+                    <li><a href="#works">代表作品</a></li>
+                    <li><a href="#news">最新动态</a></li>
+                    <li><a href="#contact">联系我们</a></li>
+                </ul>
+            </nav>
+            <a href="#contact" class="btn-subscribe">关注动态</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-content">
+                <h1>金柳妍</h1>
+                <p>优雅与才华并存的实力派艺人，用作品传递情感与力量</p>
+                <div class="hero-tags">
+                    <span>影视演员</span>
+                    <span>舞台表演</span>
+                    <span>公益大使</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Profile Section -->
+        <section id="profile" class="profile-section">
+            <div class="container">
+                <div class="profile-grid">
+                    <div class="profile-left">
+                        <div class="profile-avatar">
+                            <img src="https://picsum.photos/seed/golden/400/400" alt="金柳妍头像">
+                        </div>
+                        <div style="text-align: center;">
+                            <h3 style="margin-bottom: 0.5rem;">金柳妍</h3>
+                            <p style="color: var(--text-gray); font-size: 0.9rem;">Liuyan Jin</p>
+                            <div style="margin-top: 1rem;">
+                                <span class="tag" style="background: var(--text-dark); color: #fff;">内地演员</span>
+                                <span class="tag" style="background: var(--text-dark); color: #fff;">上海籍</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="profile-right">
+                        <div class="profile-info">
+                            <h2>关于金柳妍</h2>
+                            <p class="profile-bio">
+                                金柳妍，出生于中国上海，是一位备受瞩目的影视演员及舞台表演艺术家。自出道以来，她凭借清新自然的表演风格和深厚的台词功底，在多部热门影视作品中崭露头角。她擅长塑造性格鲜明、情感细腻的角色，无论是古装剧中的温婉女子，还是现代剧中的独立女性，都能演绎得淋漓尽致。
+                            </p>
+                            <div class="info-list">
+                                <div class="info-item">
+                                    <strong>出生日期</strong>
+                                    <span>1995年10月24日</span>
+                                </div>
+                                <div class="info-item">
+                                    <strong>身高</strong>
+                                    <span>168 cm</span>
+                                </div>
+                                <div class="info-item">
+                                    <strong>毕业院校</strong>
+                                    <span>北京电影学院表演系</span>
+                                </div>
+                                <div class="info-item">
+                                    <strong>经纪公司</strong>
+                                    <span>星耀娱乐</span>
+                                </div>
+                            </div>
+                            <p style="color: var(--text-gray); font-size: 0.95rem;">
+                                除了演艺事业，金柳妍还积极参与各类公益活动，关注儿童教育与环保事业。她认为演员不仅是荧幕上的表演者，更应承担起传递正能量的社会责任。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Works Section -->
+        <section id="works" class="works-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>代表作品</h2>
+                    <a href="#">查看全部作品 &rarr;</a>
+                </div>
+                <div class="works-grid">
+                    <!-- Work 1 -->
+                    <article class="work-card">
+                        <div class="work-poster">
+                            <img src="https://picsum.photos/seed/movie1/400/600" alt="《时光深处的你》海报">
+                            <div class="work-overlay">
+                                <a href="#" class="play-btn">▶</a>
+                            </div>
+                        </div>
+                        <div class="work-info">
+                            <h3 class="work-title">《时光深处的你》</h3>
+                            <p class="work-meta">2023 · 爱情 / 剧情片</p>
+                            <div class="work-tags">
+                                <span class="tag">金柳妍</span>
+                                <span class="tag">主演</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Work 2 -->
+                    <article class="work-card">
+                        <div class="work-poster">
+                            <img src="https://picsum.photos/seed/movie2/400/600" alt="《风起江南》海报">
+                            <div class="work-overlay">
+                                <a href="#" class="play-btn">▶</a>
+                            </div>
+                        </div>
+                        <div class="work-info">
+                            <h3 class="work-title">《风起江南》</h3>
+                            <p class="work-meta">2022 · 古装 / 历史</p>
+                            <div class="work-tags">
+                                <span class="tag">金柳妍</span>
+                                <span class="tag">女二号</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Work 3 -->
+                    <article class="work-card">
+                        <div class="work-poster">
+                            <img src="https://picsum.photos/seed/movie3/400/600" alt="《都市夜归人》海报">
+                            <div class="work-overlay">
+                                <a href="#" class="play-btn">▶</a>
+                            </div>
+                        </div>
+                        <div class="work-info">
+                            <h3 class="work-title">《都市夜归人》</h3>
+                            <p class="work-meta">2021 · 犯罪 / 悬疑</p>
+                            <div class="work-tags">
+                                <span class="tag">金柳妍</span>
+                                <span class="tag">特别出演</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Work 4 -->
+                    <article class="work-card">
+                        <div class="work-poster">
+                            <img src="https://picsum.photos/seed/movie4/400/600" alt="《初恋的味道》海报">
+                            <div class="work-overlay">
+                                <a href="#" class="play-btn">▶</a>
+                            </div>
+                        </div>
+                        <div class="work-info">
+                            <h3 class="work-title">《初恋的味道》</h3>
+                            <p class="work-meta">2020 · 青春 / 爱情</p>
+                            <div class="work-tags">
+                                <span class="tag">金柳妍</span>
+                                <span class="tag">女主角</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- News Section -->
+        <section id="news" class="news-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>最新动态</h2>
+                    <a href="#">更多资讯 &rarr;</a>
+                </div>
+                <div class="news-list">
+                    <article class="news-item">
+                        <div class="news-date">
+                            <div class="date-day">15</div>
+                            <div class="date-month">10月</div>
+                        </div>
+                        <div class="news-content">
+                            <h3>金柳妍新电影《光影之城》杀青，首度挑战年代戏</h3>
+                            <p class="news-excerpt">金柳妍近日确认加盟电影《光影之城》，将饰演一位在战火中坚守信仰的进步女性，据悉该片将于明年开机。</p>
+                            <div class="news-meta">来源：娱乐周刊 | 浏览量：12,580</div>
+                        </div>
+                    </article>
+
+                    <article class="news-item">
+                        <div class="news-date">
+                            <div class="date-day">02</div>
+                            <div class="date-month">10月</div>
+                        </div>
+                        <div class="news-content">
+                            <h3>金柳妍荣获“年度最具潜力女演员”提名</h3>
+                            <p class="news-excerpt">在近日公布的第XX届华语电影传媒大奖提名名单中，金柳妍凭借在《时光深处的你》中的精彩表现，成功入围最佳女主角提名。</p>
+                            <div class="news-meta">来源：新浪娱乐 | 浏览量：8,920</div>
+                        </div>
+                    </article>
+
+                    <article class="news-item">
+                        <div class="news-date">
+                            <div class="date-day">28</div>
+                            <div class="date-month">09月</div>
+                        </div>
+                        <div class="news-content">
+                            <h3>金柳妍出席公益活动，呼吁关注留守儿童</h3>
+                            <p class="news-excerpt">金柳妍近日现身某公益活动现场，为乡村儿童捐赠图书与学习用品，并呼吁更多人关注乡村教育问题。</p>
+                            <div class="news-meta">来源：公益时报 | 浏览量：5,430</div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact/CTA Section -->
+        <section id="contact" style="background-color: var(--primary-color); padding: 4rem 0; text-align: center; color: var(--white);">
+            <div class="container">
+                <h2 style="font-size: 2rem; margin-bottom: 1rem;">关注金柳妍官方渠道</h2>
+                <p style="margin-bottom: 2rem; opacity: 0.9;">获取最新剧照、活动信息及独家专访内容</p>
+                <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+                    <a href="#" style="background: rgba(255,255,255,0.2); padding: 0.8rem 2rem; border-radius: 4px; font-weight: 500;">官方微博</a>
+                    <a href="#" style="background: rgba(255,255,255,0.2); padding: 0.8rem 2rem; border-radius: 4px; font-weight: 500;">官方微信</a>
+                    <a href="#" style="background: rgba(255,255,255,0.2); padding: 0.8rem 2rem; border-radius: 4px; font-weight: 500;">粉丝后援会</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>JIN LIUYAN</h3>
+                    <p>致力于为观众呈现最优质的影视作品，用真诚打动人心，用实力诠释角色。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速导航</h4>
+                    <ul>
+                        <li><a href="#">首页</a></li>
+                        <li><a href="#profile">个人资料</a></li>
+                        <li><a href="#works">作品列表</a></li>
+                        <li><a href="#news">新闻资讯</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>支持服务</h4>
+                    <ul>
+                        <li><a href="#">商务合作</a></li>
+                        <li><a href="#">粉丝投稿</a></li>
+                        <li><a href="#">版权声明</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系方式</h4>
+                    <ul>
+                        <li>邮箱：contact@jinliuyan.com</li>
+                        <li>地址：上海市静安区影视大道88号</li>
+                        <li>电话：+86 21 1234 5678</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 金柳妍官方网站. All Rights Reserved. 本站为粉丝整理展示平台，非官方网站。</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+                              </html>
