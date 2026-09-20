@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="警花新婚尝又大又粗-警花新婚尝又大又粗,警花新婚尝又大又粗,警花新婚尝又大又粗,警花新婚尝又大又粗,警花新婚尝又大又粗">
+    <meta name="keywords" content="警花新婚尝又大又粗,警花新婚尝又大又粗,警花新婚尝又大又粗">
+    <title>警花新婚尝又大又粗-情感专栏与故事分享平台</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #d32f2f;
+            --secondary-color: #ff5252;
+            --text-dark: #333333;
+            --text-gray: #666666;
+            --bg-light: #f9f9f9;
+            --white: #ffffff;
+            --border-radius: 8px;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Layout */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+        }
+
+        .logo span {
+            margin-left: 8px;
+            color: var(--text-dark);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        .search-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 20px;
+            color: var(--text-gray);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #ffebee 0%, #ffcdd2 100%);
+            padding: 60px 0;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .hero h1 {
+            font-size: 36px;
+            margin-bottom: 15px;
+            color: var(--text-dark);
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: var(--text-gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Main Content Grid */
+        .main-grid {
+            display: grid;
+            grid-template-columns: 2.5fr 1fr;
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        /* Article List */
+        .article-list {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .article-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .article-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+        }
+
+        .article-image {
+            width: 100%;
+            height: 350px;
+            background-color: #e0e0e0;
+            position: relative;
+        }
+
+        .article-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .article-content {
+            padding: 25px;
+        }
+
+        .article-meta {
+            font-size: 13px;
+            color: var(--text-gray);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .article-tag {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+        }
+
+        .article-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+
+        .article-excerpt {
+            color: var(--text-gray);
+            margin-bottom: 20px;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .read-more {
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 15px;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .read-more::after {
+            content: '→';
+            margin-left: 5px;
+            transition: margin-left 0.2s;
+        }
+
+        .read-more:hover::after {
+            margin-left: 10px;
+        }
+
+        /* Sidebar */
+        aside {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .sidebar-widget {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+        }
+
+        .widget-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f0f0f0;
+            position: relative;
+        }
+
+        .widget-title::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--primary-color);
+        }
+
+        .rank-list li {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed #eee;
+        }
+
+        .rank-number {
+            font-size: 20px;
+            font-weight: bold;
+            color: #ddd;
+            margin-right: 15px;
+            min-width: 25px;
+        }
+
+        .rank-list li:nth-child(1) .rank-number { color: #ff9800; }
+        .rank-list li:nth-child(2) .rank-number { color: #ff9800; }
+        .rank-list li:nth-child(3) .rank-number { color: #ff9800; }
+
+        .rank-info h4 {
+            font-size: 15px;
+            margin-bottom: 4px;
+        }
+
+        .rank-info span {
+            font-size: 12px;
+            color: var(--text-gray);
+        }
+
+        /* Hot Topics */
+        .topic-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+
+        .topic-item {
+            background-color: #f5f5f5;
+            padding: 10px;
+            border-radius: 4px;
+            font-size: 14px;
+            text-align: center;
+            transition: background 0.2s;
+        }
+
+        .topic-item:hover {
+            background-color: #ffebee;
+            color: var(--primary-color);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2c2c2c;
+            color: #aaa;
+            padding: 40px 0;
+            margin-top: 60px;
+            text-align: center;
+        }
+
+        .footer-links {
+            margin-bottom: 20px;
+        }
+
+        .footer-links a {
+            margin: 0 10px;
+            font-size: 14px;
+        }
+
+        .footer-links a:hover {
+            color: var(--white);
+        }
+
+        .copyright {
+            font-size: 13px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+                gap: 15px;
+            }
+
+            nav ul {
+                gap: 15px;
+                font-size: 14px;
+            }
+
+            .main-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 28px;
+            }
+
+            .article-image {
+                height: 240px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container header-inner">
+        <a href="#" class="logo">情感<span>专栏</span></a>
+        <nav>
+            <ul>
+                <li><a href="#" class="active">首页</a></li>
+                <li><a href="#">情感故事</a></li>
+                <li><a href="#">两性关系</a></li>
+                <li><a href="#">生活百科</a></li>
+            </ul>
+        </nav>
+        <button class="search-btn">🔍</button>
+    </div>
+</header>
+
+<section class="hero">
+    <div class="container">
+        <h1>警花新婚尝又大又粗</h1>
+        <p>探索现代都市情感故事，关注两性心理与婚姻生活，分享真实案例与专业建议。</p>
+    </div>
+</section>
+
+<main class="container">
+    <div class="main-grid">
+        <!-- Article List -->
+        <div class="article-list">
+            <article class="article-card">
+                <div class="article-image">
+                    <img src="https://picsum.photos/seed/love1/800/400" alt="情感故事配图">
+                </div>
+                <div class="article-content">
+                    <div class="article-meta">
+                        <span class="article-tag">情感故事</span>
+                        <span>2023-10-24</span>
+                        <span>阅读 12,580</span>
+                    </div>
+                    <h2 class="article-title">新婚之夜的意外：当浪漫遇上现实的磨合</h2>
+                    <p class="article-excerpt">婚姻不仅仅是两个人的结合，更是两个生活习惯的碰撞。对于刚步入婚姻殿堂的年轻人来说，如何在激情褪去后保持关系的温度，是每个人都需要面对的课题。本文将探讨新婚阶段常见的心理变化与应对策略。</p>
+                    <a href="#" class="read-more">阅读全文</a>
+                </div>
+            </article>
+
+            <article class="article-card">
+                <div class="article-image">
+                    <img src="https://picsum.photos/seed/love2/800/400" alt="情感故事配图">
+                </div>
+                <div class="article-content">
+                    <div class="article-meta">
+                        <span class="article-tag">两性心理</span>
+                        <span>2023-10-23</span>
+                        <span>阅读 8,920</span>
+                    </div>
+                    <h2 class="article-title">关于身体亲密接触的沟通与理解</h2>
+                    <p class="article-excerpt">在亲密关系中，坦诚的沟通是建立信任的基石。无论是伴侣间的身体接触，还是对彼此身体的探索，都需要建立在尊重与理解的基础上。了解彼此的需求与界限，才能让关系更加和谐美满。</p>
+                    <a href="#" class="read-more">阅读全文</a>
+                </div>
+            </article>
+
+            <article class="article-card">
+                <div class="article-image">
+                    <img src="https://picsum.photos/seed/love3/800/400" alt="情感故事配图">
+                </div>
+                <div class="article-content">
+                    <div class="article-meta">
+                        <span class="article-tag">生活百科</span>
+                        <span>2023-10-22</span>
+                        <span>阅读 15,300</span>
+                    </div>
+                    <h2 class="article-title">如何应对新婚期的压力与挑战</h2>
+                    <p class="article-excerpt">从恋爱到婚姻，身份的转变往往伴随着巨大的心理压力。工作、家庭、财务等多重因素交织，容易让人感到焦虑。本文提供了一些实用的心理调节方法和家庭沟通技巧，帮助新婚夫妻平稳度过适应期。</p>
+                    <a href="#" class="read-more">阅读全文</a>
+                </div>
+            </article>
+        </div>
+
+        <!-- Sidebar -->
+        <aside>
+            <div class="sidebar-widget">
+                <h3 class="widget-title">热门推荐</h3>
+                <ul class="rank-list">
+                    <li>
+                        <span class="rank-number">1</span>
+                        <div class="rank-info">
+                            <h4><a href="#">职场女性的自我成长之路</a></h4>
+                            <span>2.3万阅读</span>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="rank-number">2</span>
+                        <div class="rank-info">
+                            <h4><a href="#">中年夫妻如何保持激情</a></h4>
+                            <span>1.8万阅读</span>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="rank-number">3</span>
+                        <div class="rank-info">
+                            <h4><a href="#">独居生活的安全指南</a></h4>
+                            <span>1.5万阅读</span>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="rank-number">4</span>
+                        <div class="rank-info">
+                            <h4><a href="#">理财入门：如何规划家庭资产</a></h4>
+                            <span>1.2万阅读</span>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="rank-number">5</span>
+                        <div class="rank-info">
+                            <h4><a href="#">健康饮食：打造活力身体</a></h4>
+                            <span>9,800阅读</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="sidebar-widget">
+                <h3 class="widget-title">热门话题</h3>
+                <div class="topic-grid">
+                    <a href="#" class="topic-item">#婚姻经营</a>
+                    <a href="#" class="topic-item">#情感咨询</a>
+                    <a href="#" class="topic-item">#心理健康</a>
+                    <a href="#" class="topic-item">#两性关系</a>
+                    <a href="#" class="topic-item">#家庭和谐</a>
+                    <a href="#" class="topic-item">#自我提升</a>
+                </div>
+            </div>
+        </aside>
+    </div>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-links">
+            <a href="#">关于我们</a>
+            <a href="#">联系方式</a>
+            <a href="#">免责声明</a>
+            <a href="#">隐私政策</a>
+            <a href="#">友情链接</a>
+        </div>
+        <p class="copyright">Copyright © 2023 情感专栏平台. All Rights Reserved.</p>
+    </div>
+</footer>
+
+</body>
+</html>
