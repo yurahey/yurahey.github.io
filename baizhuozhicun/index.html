@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>白浊之村游戏 - 悬疑解谜冒险与恐怖氛围体验指南</title>
+    <meta name="description" content="白浊之村游戏是一款以日本农村为背景的悬疑解谜恐怖冒险游戏。本站提供游戏背景介绍、核心玩法解析、操作指南、存档位置及通关技巧，帮助玩家深入了解游戏剧情与隐藏要素。">
+    <meta name="keywords" content="白浊之村游戏,恐怖解谜,日式恐怖,冒险游戏,游戏攻略,恐怖游戏推荐">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --bg-color: #121212;
+            --card-bg: #1e1e1e;
+            --text-main: #e0e0e0;
+            --text-muted: #a0a0a0;
+            --accent-red: #b91c1c;
+            --accent-dark-red: #7f1d1d;
+            --border-color: #333;
+            --spacing-unit: 1rem;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", "Segoe UI", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Layout */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* Header */
+        header {
+            background-color: rgba(18, 18, 18, 0.95);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(5px);
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--accent-red);
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-menu a {
+            font-size: 1rem;
+            color: var(--text-muted);
+        }
+
+        .nav-menu a:hover, .nav-menu a.active {
+            color: var(--accent-red);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 450px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+            background: radial-gradient(circle at center, #2a0a0a 0%, #000 100%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding: 20px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+            letter-spacing: 2px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #ccc;
+            margin-bottom: 2rem;
+            text-shadow: 0 1px 5px rgba(0,0,0,0.8);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--accent-red);
+            color: white;
+            border-radius: 4px;
+            font-weight: bold;
+            transition: background-color 0.3s, transform 0.1s;
+        }
+
+        .btn:hover {
+            background-color: var(--accent-dark-red);
+        }
+
+        .btn:active {
+            transform: scale(0.98);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--text-main);
+            margin-left: 10px;
+        }
+
+        .btn-outline:hover {
+            background-color: rgba(255,255,255,0.1);
+            border-color: var(--text-main);
+        }
+
+        /* Section Styling */
+        section {
+            padding: 60px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            border-left: 5px solid var(--accent-red);
+            padding-left: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .section-title a {
+            font-size: 0.9rem;
+            color: var(--accent-red);
+            font-weight: normal;
+        }
+
+        /* Intro Grid */
+        .intro-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        .intro-text p {
+            margin-bottom: 1rem;
+            color: var(--text-muted);
+        }
+
+        .intro-image {
+            width: 100%;
+            height: 300px;
+            background-color: #2a2a2a;
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .intro-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(20%) sepia(20%);
+        }
+
+        /* Game Features */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .feature-card {
+            background-color: var(--card-bg);
+            padding: 25px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-red);
+        }
+
+        .feature-icon {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: var(--accent-red);
+        }
+
+        .feature-card h3 {
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .feature-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Guide List */
+        .guide-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .guide-item {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .guide-cover {
+            height: 180px;
+            background-color: #333;
+            position: relative;
+        }
+
+        .guide-cover img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .guide-content {
+            padding: 20px;
+        }
+
+        .guide-tag {
+            font-size: 0.8rem;
+            color: var(--accent-red);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .guide-title {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+
+        .guide-desc {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 15px;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        /* FAQ */
+        .faq-item {
+            background-color: var(--card-bg);
+            margin-bottom: 10px;
+            border-radius: 4px;
+            border: 1px solid var(--border-color);
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: bold;
+        }
+
+        .faq-question:hover {
+            background-color: rgba(255,255,255,0.02);
+        }
+
+        .faq-answer {
+            padding: 0 20px 20px;
+            color: var(--text-muted);
+            display: none;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            padding-top: 15px;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question {
+            color: var(--accent-red);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0a0a0a;
+            padding: 50px 0 20px;
+            border-top: 1px solid var(--border-color);
+            margin-top: 50px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: var(--text-main);
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--accent-red);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #222;
+            color: #555;
+            font-size: 0.85rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .intro-grid {
+                grid-template-columns: 1fr;
+            }
+            .nav-menu {
+                display: none; /* Simplified for mobile */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">白浊之村<span>Game</span></a>
+            <nav class="nav-menu">
+                <a href="#intro" class="active">游戏介绍</a>
+                <a href="#features">核心特色</a>
+                <a href="#guide">攻略指南</a>
+                <a href="#faq">常见问题</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>白浊之村游戏</h1>
+                <p>沉浸于日式恐怖氛围，解开被遗忘村庄的诡异谜题。体验心理惊悚与解谜冒险的完美结合。</p>
+                <div>
+                    <a href="#guide" class="btn">查看攻略</a>
+                    <a href="#features" class="btn btn-outline">了解详情</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Introduction Section -->
+        <section id="intro" class="container">
+            <h2 class="section-title">游戏背景介绍</h2>
+            <div class="intro-grid">
+                <div class="intro-text">
+                    <p>《白浊之村》是一款以日本农村传说为灵感创作的第一人称恐怖解谜冒险游戏。故事发生在一个与世隔绝的偏远山村，这里流传着关于“白浊之河”的禁忌传说。玩家将扮演一名误入此地的调查员，逐渐揭开村庄表面平静下隐藏的黑暗秘密。</p>
+                    <p>游戏采用了写实的美术风格与沉浸式的音效设计，旨在还原那种压抑、阴森且充满未知的恐怖氛围。玩家需要在探索村庄的过程中收集线索、解开封印的机关，并在有限的资源下生存下去，最终决定村庄的命运。</p>
+                </div>
+                <div class="intro-image">
+                    <!-- Using a generic placeholder that fits the dark/moody theme -->
+                    <img src="https://picsum.photos/seed/whitevillage/600/400?grayscale" alt="白浊之村游戏场景示意图">
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="container">
+            <h2 class="section-title">核心特色体验</h2>
+            <div class="features-grid">
+                <article class="feature-card">
+                    <div class="feature-icon">👻</div>
+                    <h3>日式恐怖氛围</h3>
+                    <p>精心设计的音效与光影，配合令人毛骨悚然的CG剧情，营造极致的压迫感与心理惊悚体验。</p>
+                </article>
+                <article class="feature-card">
+                    <div class="feature-icon">🔍</div>
+                    <h3>深度解谜机制</h3>
+                    <p>结合环境互动与物品收集，通过观察细节寻找线索，解开古老的封印与谜题。</p>
+                </article>
+                <article class="feature-card">
+                    <div class="feature-icon">📜</div>
+                    <h3>多线剧情分支</h3>
+                    <p>玩家的选择将影响故事走向与结局，不同的决策将导向截然不同的恐怖结局。</p>
+                </article>
+                <article class="feature-card">
+                    <div class="feature-icon">🏚️</div>
+                    <h3>探索未知村落</h3>
+                    <p>拥有丰富互动元素的场景，从破败的神社到幽深的地下河，每一个角落都潜藏着秘密。</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- Guide Section -->
+        <section id="guide" class="container">
+            <h2 class="section-title">新手与进阶指南 <a href="#">查看更多攻略 &rarr;</a></h2>
+            <div class="guide-list">
+                <!-- Guide Item 1 -->
+                <article class="guide-item">
+                    <div class="guide-cover">
+                        <img src="https://picsum.photos/seed/puzzle/400/250" alt="解谜技巧">
+                    </div>
+                    <div class="guide-content">
+                        <span class="guide-tag">基础玩法</span>
+                        <h3 class="guide-title">新手入门：如何快速上手</h3>
+                        <p class="guide-desc">详细解析游戏的基本操作、物品栏管理以及初期生存技巧，帮助你顺利度过开局的危机。</p>
+                        <a href="#" class="btn" style="padding: 8px 20px; font-size: 0.9rem;">阅读全文</a>
+                    </div>
+                </article>
+
+                <!-- Guide Item 2 -->
+                <article class="guide-item">
+                    <div class="guide-cover">
+                        <img src="https://picsum.photos/seed/keys/400/250" alt="关键道具">
+                    </div>
+                    <div class="guide-content">
+                        <span class="guide-tag">道具解析</span>
+                        <h3 class="guide-title">关键道具获取位置一览</h3>
+                        <p class="guide-desc">整理了游戏中所有重要道具（如钥匙、符咒、手电筒）的隐藏获取点与开启条件。</p>
+                        <a href="#" class="btn" style="padding: 8px 20px; font-size: 0.9rem;">阅读全文</a>
+                    </div>
+                </article>
+
+                <!-- Guide Item 3 -->
+                <article class="guide-item">
+                    <div class="guide-cover">
+                        <img src="https://picsum.photos/seed/ending/400/250" alt="结局解析">
+                    </div>
+                    <div class="guide-content">
+                        <span class="guide-tag">剧情解析</span>
+                        <h3 class="guide-title">全结局达成条件与剧情真相</h3>
+                        <p class="guide-desc">揭秘白浊之村背后的悲剧故事，分析隐藏在细节中的伏笔，助你解锁所有真结局。</p>
+                        <a href="#" class="btn" style="padding: 8px 20px; font-size: 0.9rem;">阅读全文</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="container">
+            <h2 class="section-title">常见问题 (FAQ)</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">Q: 游戏支持哪些平台？</div>
+                <div class="faq-answer">A: 《白浊之村游戏》目前支持PC（Steam平台）及部分主流主机平台，具体版本信息请查看发行商公告。</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Q: 游戏难度如何？是否适合恐怖游戏新手？</div>
+                <div class="faq-answer">A: 游戏包含恐怖元素，会对视觉和听觉产生刺激。虽然解谜难度适中，但建议胆小的玩家在观看视频攻略时开启静音或佩戴耳机。</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Q: 游戏存档位置在哪里？</div>
+                <div class="faq-answer">A: PC版存档通常位于用户目录下的 "Documents" 或 "AppData" 文件夹中的特定游戏文件夹内，建议定期手动备份存档文件。</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Q: 游戏是否有中文版本？</div>
+                <div class="faq-answer">A: 官方版本已包含简体中文与繁体中文，玩家可在设置中轻松切换语言。</div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>关于我们</h4>
+                    <ul>
+                        <li><a href="#">游戏介绍</a></li>
+                        <li><a href="#">开发团队</a></li>
+                        <li><a href="#">联系我们</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>资源下载</h4>
+                    <ul>
+                        <li><a href="#">官方客户端</a></li>
+                        <li><a href="#">高清壁纸</a></li>
+                        <li><a href="#">背景音乐</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>社区互动</h4>
+                    <ul>
+                        <li><a href="#">玩家论坛</a></li>
+                        <li><a href="#">Discord群组</a></li>
+                        <li><a href="#">更新日志</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>法律声明</h4>
+                    <ul>
+                        <li><a href="#">用户协议</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                        <li><a href="#">版权信息</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 白浊之村游戏爱好者社区. All Rights Reserved. 本站为玩家粉丝自制内容平台，非官方网站。</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 简单的 FAQ 交互逻辑
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    // 关闭其他已打开的项
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    // 切换当前项
+                    item.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
