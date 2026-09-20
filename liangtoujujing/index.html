@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>两头巨鲸玩自拍 - 海洋生物影像与科普观察</title>
+    <meta name="description" content="探索两头巨鲸玩自拍的奇妙瞬间，了解座头鲸与虎鲸的社交行为、海洋摄影技巧及深海生态观察指南。">
+    <meta name="keywords" content="两头巨鲸玩自拍, 座头鲸, 虎鲸, 海洋摄影, 深海生物, 野生动物影像">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #006994;
+            --secondary-color: #004e70;
+            --accent-color: #f0f8ff;
+            --text-dark: #333333;
+            --text-light: #666666;
+            --bg-light: #ffffff;
+            --bg-off-white: #f4f8fb;
+            --border-radius: 8px;
+            --container-width: 1200px;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-off-white);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+        }
+
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--bg-light);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo svg {
+            width: 32px;
+            height: 32px;
+            fill: var(--primary-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 500px;
+            background: linear-gradient(rgba(0, 30, 60, 0.4), rgba(0, 30, 60, 0.6)), url('https://picsum.photos/seed/whale2/1600/900') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 20px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .btn:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 60px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-header h2 {
+            font-size: 2rem;
+            color: var(--text-dark);
+            margin-bottom: 15px;
+        }
+
+        .section-header p {
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Feature Cards */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: var(--bg-light);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            width: 50px;
+            height: 50px;
+            background-color: var(--accent-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .feature-card h3 {
+            margin-bottom: 15px;
+            font-size: 1.25rem;
+        }
+
+        .feature-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Image Gallery */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(2, 200px);
+            gap: 15px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: var(--border-radius);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .gallery-item.large {
+            grid-column: span 2;
+            grid-row: span 2;
+        }
+
+        .caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.6);
+            color: white;
+            padding: 10px;
+            font-size: 0.9rem;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover .caption {
+            transform: translateY(0);
+        }
+
+        /* Info Layout */
+        .info-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 50px;
+        }
+
+        .article-content h3 {
+            margin-top: 30px;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        .article-content p {
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        .sidebar {
+            background: var(--bg-light);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            height: fit-content;
+        }
+
+        .sidebar h4 {
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--accent-color);
+        }
+
+        .sidebar-list li {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .sidebar-list li:last-child {
+            border-bottom: none;
+        }
+
+        .sidebar-list strong {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .tag-cloud {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .tag {
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            background-color: var(--bg-light);
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+            border: 1px solid #eee;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 20px;
+            background-color: #fafafa;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+        }
+
+        .faq-question:hover {
+            background-color: #f0f0f0;
+        }
+
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            color: var(--text-light);
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 0 20px 20px 20px;
+            max-height: 200px;
+        }
+
+        .faq-item.active .faq-question {
+            color: var(--primary-color);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            nav ul {
+                display: none;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto;
+            }
+
+            .gallery-item.large {
+                grid-column: span 1;
+                grid-row: span 1;
+            }
+
+            .info-layout {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">
+                <svg viewBox="0 0 24 24">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+                </svg>
+                海洋视界
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#">首页</a></li>
+                    <li><a href="#">巨鲸影像</a></li>
+                    <li><a href="#">科普指南</a></li>
+                    <li><a href="#">摄影技巧</a></li>
+                    <li><a href="#">关于我们</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>两头巨鲸玩自拍</h1>
+                <p>探索海洋中最迷人的社交时刻：当座头鲸与虎鲸在深海相遇，它们如何通过独特的互动方式展现智慧与情感？</p>
+                <a href="#gallery" class="btn">浏览精彩影像</a>
+            </div>
+        </section>
+
+        <!-- Intro Section -->
+        <section class="container">
+            <div class="info-layout">
+                <article class="article-content">
+                    <h2>关于“巨鲸自拍”的海洋奇观</h2>
+                    <p>在浩瀚的海洋中，偶尔会出现令人惊叹的互动画面。所谓的“两头巨鲸玩自拍”，并非指人类手持相机拍摄，而是指在自然状态下，不同种类的海洋哺乳动物展现出的一种高度复杂的社会行为。</p>
+                    <p>这种互动通常发生在鲸类活跃的海域。例如，体型巨大的座头鲸有时会与体型较小但更具攻击性的虎鲸擦肩而过。虽然它们在生态位上属于捕食者与猎物的关系，但在某些特定的水文条件下，它们会表现出一种奇妙的“共存”或“好奇”状态。这种画面往往被水下摄影师捕捉下来，被大众形象地称为“巨鲸自拍”。</p>
+                    <h3>这种行为背后的科学解释</h3>
+                    <p>鲸类是拥有高智商和复杂社会结构的动物。对于它们而言，观察同类或不同种类的生物是一种重要的学习方式。当两头的巨鲸靠近时，它们可能是在进行身份识别、评估潜在威胁，或者仅仅是在进行一种非攻击性的社交试探。</p>
+                    <p>对于人类观察者来说，这种画面打破了我们对海洋生物冷酷捕食者的刻板印象，展现了它们柔软、好奇甚至幽默的一面。每一次“自拍”瞬间的定格，都是海洋生态系统中生物多样性与生命力的有力证明。</p>
+                </article>
+
+                <aside class="sidebar">
+                    <h4>热门话题</h4>
+                    <ul class="sidebar-list">
+                        <li>
+                            <strong>座头鲸跃水</strong>
+                            <span>海洋中最具视觉冲击力的行为之一</span>
+                        </li>
+                        <li>
+                            <strong>虎鲸群居</strong>
+                            <span>高度复杂的家族结构与语言交流</span>
+                        </li>
+                        <li>
+                            <strong>水下摄影</strong>
+                            <span>如何捕捉清晰的鲸类影像</span>
+                        </li>
+                        <li>
+                            <strong>海洋保护</strong>
+                            <span>减少噪音污染对鲸类的影响</span>
+                        </li>
+                    </ul>
+                    <div class="tag-cloud">
+                        <span class="tag">#海洋生物</span>
+                        <span class="tag">#生态摄影</span>
+                        <span class="tag">#科普</span>
+                        <span class="tag">#野生动物</span>
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section class="container" id="gallery">
+            <div class="section-header">
+                <h2>精选影像集</h2>
+                <p>记录下那些稍纵即逝的海洋瞬间，感受大自然的鬼斧神工。</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item large">
+                    <img src="https://picsum.photos/seed/whale1/800/600" alt="两头巨鲸在水中互动的壮观场景">
+                    <div class="caption">两头巨鲸在平静的海面下进行近距离观察，光影交错间展现神秘感。</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://picsum.photos/seed/sea1/400/300" alt="蔚蓝的海面">
+                    <div class="caption">深蓝的诱惑</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://picsum.photos/seed/sea2/400/300" alt="海浪拍打礁石">
+                    <div class="caption">海浪的节奏</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://picsum.photos/seed/whale3/400/300" alt="巨鲸背鳍">
+                    <div class="caption">独特的背鳍印记</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://picsum.photos/seed/whale4/400/300" alt="海豚群">
+                    <div class="caption">海豚的灵动</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="container" style="background-color: var(--accent-color);">
+            <div class="section-header">
+                <h2>探索更多鲸类行为</h2>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+                    </div>
+                    <h3>社会结构</h3>
+                    <p>鲸类拥有极其严密的社会等级和复杂的亲属关系，它们通过声音、身体接触和共同行为来维系家族纽带。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>
+                    </div>
+                    <h3>水下交流</h3>
+                    <p>鲸鱼利用声呐系统进行回声定位，同时也通过鲸歌进行远距离交流，这种声音在海洋中传播极远。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93z"/></svg>
+                    </div>
+                    <h3>迁徙智慧</h3>
+                    <p>每年数吨重的巨鲸会进行跨越数万公里的迁徙，它们展现出惊人的导航能力和生存本能。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq-section">
+            <div class="container faq-container">
+                <div class="section-header">
+                    <h2>常见问题解答</h2>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">“巨鲸自拍”是真的吗？</div>
+                    <div class="faq-answer">
+                        <p>是的，这是一种形象的说法。它指的是摄影师在自然水域中拍摄到的鲸类（如座头鲸、虎鲸等）之间进行近距离接触或互动的画面。这些画面展示了它们丰富的情感和社会行为。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">在哪里可以看到这样的景象？</div>
+                    <div class="faq-answer">
+                        <p>这主要取决于季节和迁徙路线。例如，在太平洋的阿拉斯加海域或澳大利亚的东海岸，是观察座头鲸和虎鲸的热门地点。通常需要在专门的鲸类观赏船上进行。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">我们应该如何正确拍摄鲸鱼？</div>
+                    <div class="faq-answer">
+                        <p>尊重生命是首要原则。必须保持安全距离，不得干扰鲸鱼的自然行为，严禁使用无人机或船只进行近距离追捕。使用长焦镜头是最好的选择。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>海洋视界</h4>
+                    <p style="color: rgba(255,255,255,0.7); font-size: 0.9rem;">致力于推广海洋生态保护，分享最真实的海洋生物影像与科普知识。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>探索栏目</h4>
+                    <ul>
+                        <li><a href="#">深海奇观</a></li>
+                        <li><a href="#">极地探险</a></li>
+                        <li><a href="#">珊瑚礁生态</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系方式</h4>
+                    <ul>
+                        <li><a href="#">投稿指南</a></li>
+                        <li><a href="#">合作洽谈</a></li>
+                        <li><a href="#">加入志愿者</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2023 海洋视界. 保留所有权利. 本网站内容仅供科普与教育参考.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple FAQ Accordion Logic
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    // Close other items
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    // Toggle current item
+                    item.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
