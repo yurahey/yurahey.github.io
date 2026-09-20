@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>米菲兔-经典绘本与儿童教育互动体验中心</title>
+    <meta name="description" content="米菲兔官方互动体验中心。探索米菲兔的经典绘本世界，了解米菲兔的温馨故事、教育理念及正版周边产品。提供亲子阅读指南、米菲兔主题游戏及育儿资讯。">
+    <meta name="keywords" content="米菲兔, 米菲, 陈迪夫, 绘本, 儿童读物, 亲子阅读, 育儿">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #FFC20E; /* 经典米菲黄 */
+            --secondary-color: #4A4A4A; /* 深灰 */
+            --accent-color: #E8F0FE; /* 浅蓝背景 */
+            --text-color: #333333;
+            --light-text: #666666;
+            --white: #ffffff;
+            --border-radius: 12px;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --font-main: "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-main);
+            color: var(--text-color);
+            background-color: #fafafa;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* 布局容器 */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* 头部导航 */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--secondary-color);
+        }
+
+        .logo span {
+            color: var(--primary-color);
+            margin-left: 5px;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-size: 16px;
+            color: var(--secondary-color);
+            font-weight: 500;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        .nav-cta {
+            background-color: var(--primary-color);
+            color: var(--white) !important;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: bold;
+        }
+
+        .nav-cta:hover {
+            background-color: #e5b808;
+            color: var(--white) !important;
+        }
+
+        /* Hero 区域 */
+        .hero {
+            background: linear-gradient(135deg, var(--accent-color) 0%, #ffffff 100%);
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--light-text);
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: var(--white);
+            border: 2px solid var(--primary-color);
+        }
+
+        .btn-primary:hover {
+            background-color: #e5b808;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--secondary-color);
+            border: 2px solid var(--secondary-color);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--secondary-color);
+            color: var(--white);
+        }
+
+        /* 经典故事板块 */
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-header h2 {
+            font-size: 2rem;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+        }
+
+        .section-header p {
+            color: var(--light-text);
+        }
+
+        .book-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .book-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .book-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .book-cover {
+            height: 350px;
+            background-color: #eee;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .book-cover img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .book-card:hover .book-cover img {
+            transform: scale(1.05);
+        }
+
+        .book-info {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .book-title {
+            font-size: 1.25rem;
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: var(--secondary-color);
+        }
+
+        .book-desc {
+            font-size: 0.9rem;
+            color: var(--light-text);
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .book-tag {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: var(--secondary-color);
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            margin-bottom: 10px;
+            width: fit-content;
+        }
+
+        /* 教育理念板块 */
+        .philosophy {
+            background-color: var(--white);
+        }
+
+        .philosophy-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+
+        .philosophy-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .philosophy-text h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: var(--secondary-color);
+        }
+
+        .philosophy-list li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .check-icon {
+            color: var(--primary-color);
+            margin-right: 10px;
+            font-weight: bold;
+        }
+
+        .philosophy-visual {
+            flex: 1;
+            min-width: 300px;
+            background-color: var(--accent-color);
+            border-radius: var(--border-radius);
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        
+        .philosophy-visual::after {
+            content: "Miffy & Friends";
+            font-size: 4rem;
+            font-weight: 900;
+            color: rgba(255, 255, 255, 0.5);
+            z-index: 0;
+        }
+
+        /* 互动游戏 */
+        .games-section {
+            background-color: #FFF9E6; /* 淡黄色背景 */
+        }
+
+        .game-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .game-item {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .game-item:hover {
+            background-color: var(--primary-color);
+        }
+
+        .game-item:hover h3, .game-item:hover p {
+            color: var(--white);
+        }
+
+        .game-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .game-item h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--secondary-color);
+        }
+
+        .game-item p {
+            font-size: 0.9rem;
+            color: var(--light-text);
+        }
+
+        /* 常见问题 FAQ */
+        .faq-section {
+            background-color: var(--white);
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #eee;
+            padding: 20px 0;
+        }
+
+        .faq-question {
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--secondary-color);
+        }
+
+        .faq-answer {
+            margin-top: 15px;
+            color: var(--light-text);
+            display: none;
+            padding-left: 10px;
+            border-left: 3px solid var(--primary-color);
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question {
+            color: var(--primary-color);
+        }
+
+        /* 页脚 */
+        footer {
+            background-color: var(--secondary-color);
+            color: var(--white);
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: #ccc;
+            font-size: 0.9rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--white);
+        }
+
+        .copyright {
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px;
+            font-size: 0.85rem;
+            color: #888;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .nav-wrapper {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+                gap: 15px;
+            }
+
+            nav ul {
+                gap: 15px;
+                font-size: 14px;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .game-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .philosophy-content {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 导航栏 -->
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">
+                米菲<span>兔</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#books" class="active">经典绘本</a></li>
+                    <li><a href="#philosophy">教育理念</a></li>
+                    <li><a href="#games">互动游戏</a></li>
+                    <li><a href="#faq">育儿问答</a></li>
+                </ul>
+            </nav>
+            <a href="#" class="nav-cta">购买正版</a>
+        </div>
+    </header>
+
+    <!-- 主视觉区 -->
+    <section class="hero">
+        <div class="container">
+            <h1>简单，却充满爱</h1>
+            <p>跟随米菲兔的脚步，探索简单而纯粹的快乐世界。在这里，我们通过经典绘本与互动体验，陪伴孩子健康快乐地成长。</p>
+            <div class="hero-buttons">
+                <a href="#books" class="btn btn-primary">开始阅读</a>
+                <a href="#philosophy" class="btn btn-outline">了解理念</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 经典绘本推荐 -->
+    <section id="books" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>经典绘本系列</h2>
+                <p>每一本都是陪伴孩子成长的好伙伴，语言简单，寓意深刻。</p>
+            </div>
+            <div class="book-grid">
+                <!-- 书籍卡片 1 -->
+                <article class="book-card">
+                    <div class="book-cover">
+                        <!-- 使用 picsum 作为占位图，实际应为米菲绘本封面 -->
+                        <img src="https://picsum.photos/seed/miffy1/400/500" alt="米菲去上学">
+                    </div>
+                    <div class="book-info">
+                        <span class="book-tag">入门推荐</span>
+                        <h3 class="book-title">米菲去上学</h3>
+                        <p class="book-desc">米菲第一次走进学校，认识新朋友，学习新知识。帮助孩子缓解入园焦虑，建立自信。</p>
+                    </div>
+                </article>
+
+                <!-- 书籍卡片 2 -->
+                <article class="book-card">
+                    <div class="book-cover">
+                        <img src="https://picsum.photos/seed/miffy2/400/500" alt="米菲的生日">
+                    </div>
+                    <div class="book-info">
+                        <span class="book-tag">节日主题</span>
+                        <h3 class="book-title">米菲的生日</h3>
+                        <p class="book-desc">通过庆祝生日的故事，引导孩子学会分享、感恩，理解家庭团聚的温暖。</p>
+                    </div>
+                </article>
+
+                <!-- 书籍卡片 3 -->
+                <article class="book-card">
+                    <div class="book-cover">
+                        <img src="https://picsum.photos/seed/miffy3/400/500" alt="米菲的花园">
+                    </div>
+                    <div class="book-info">
+                        <span class="book-tag">自然探索</span>
+                        <h3 class="book-title">米菲的花园</h3>
+                        <p class="book-desc">在花园里观察花草、昆虫，培养孩子对大自然的热爱和观察力。</p>
+                    </div>
+                </article>
+
+                <!-- 书籍卡片 4 -->
+                <article class="book-card">
+                    <div class="book-cover">
+                        <img src="https://picsum.photos/seed/miffy4/400/500" alt="米菲和爸爸">
+                    </div>
+                    <div class="book-info">
+                        <span class="book-tag">亲子关系</span>
+                        <h3 class="book-title">米菲和爸爸</h3>
+                        <p class="book-desc">展现父子之间温馨的互动，强调陪伴的重要性，传递父爱的深沉。</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- 教育理念 -->
+    <section id="philosophy" class="section philosophy">
+        <div class="container">
+            <div class="philosophy-content">
+                <div class="philosophy-text">
+                    <h2>简单线条中的教育智慧</h2>
+                    <p style="margin-bottom: 20px;">米菲兔不仅仅是一个卡通形象，更是荷兰插画大师Dick Bruna留给世界的宝贵财富。她的设计理念深受蒙台梭利教育法启发，旨在通过极简的视觉语言，培养孩子的专注力与审美。</p>
+                    <ul class="philosophy-list">
+                        <li>
+                            <span class="check-icon">✓</span>
+                            <span><strong>极简主义：</strong> 去除繁杂背景，突出主体，帮助孩子集中注意力。</span>
+                        </li>
+                        <li>
+                            <span class="check-icon">✓</span>
+                            <span><strong>情感教育：</strong> 通过简单的面部表情传达喜怒哀乐，教会孩子识别情绪。</span>
+                        </li>
+                        <li>
+                            <span class="check-icon">✓</span>
+                            <span><strong>生活场景：</strong> 故事涵盖日常生活，让孩子在熟悉的情境中学习规则。</span>
+                        </li>
+                        <li>
+                            <span class="check-icon">✓</span>
+                            <span><strong>双语启蒙：</strong> 许多经典作品配有英文原文，适合作为早期英语启蒙读物。</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="philosophy-visual">
+                    <!-- 装饰性元素 -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 互动游戏 -->
+    <section id="games" class="section games-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>互动游戏体验</h2>
+                <p>在游戏中学习，在快乐中成长。我们提供专为儿童设计的益智小游戏。</p>
+            </div>
+            <div class="game-grid">
+                <div class="game-item">
+                    <span class="game-icon">🎨</span>
+                    <h3>米菲涂色本</h3>
+                    <p>发挥想象力，为米菲和朋友们穿上最漂亮的衣服。</p>
+                </div>
+                <div class="game-item">
+                    <span class="game-icon">🧩</span>
+                    <h3>拼图大挑战</h3>
+                    <p>锻炼空间思维能力，完成经典场景的拼图。</p>
+                </div>
+                <div class="game-item">
+                    <span class="game-icon">🚂</span>
+                    <h3>米菲小火车</h3>
+                    <p>驾驶小火车，收集沿途的礼物，前往目的地。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 常见问题 FAQ -->
+    <section id="faq" class="section faq-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>家长常见问题</h2>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">米菲兔适合多大的孩子阅读？ <span>+</span></div>
+                    <div class="faq-answer">米菲兔的绘本设计跨度很大，从0-3岁的低幼认知（硬板书、触摸书）到3-6岁的故事绘本都非常适合。建议家长根据孩子的实际阅读水平选择。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">在哪里可以买到正版米菲兔绘本？ <span>+</span></div>
+                    <div class="faq-answer">您可以在各大电商平台（如天猫、京东）的官方旗舰店，以及线下大型书店购买正版图书。请认准出版社授权标识，以保障印刷质量和内容安全。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">米菲兔的故事有什么教育意义？ <span>+</span></div>
+                    <div class="faq-answer">米菲兔的故事大多取材于儿童的日常生活，如穿衣、洗澡、上学、过生日等。它通过简单的情节，潜移默化地教导孩子遵守规则、尊重他人、管理情绪，是很好的生活教育素材。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">除了绘本，还有哪些米菲产品？ <span>+</span></div>
+                    <div class="faq-answer">米菲兔的授权产品非常丰富，包括动画短片、玩偶、文具、家居用品以及各类APP互动软件，覆盖了儿童成长的方方面面。</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>关于米菲</h4>
+                    <ul>
+                        <li><a href="#">品牌故事</a></li>
+                        <li><a href="#">作者介绍</a></li>
+                        <li><a href="#">全球动态</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>资源中心</h4>
+                    <ul>
+                        <li><a href="#">绘本下载</a></li>
+                        <li><a href="#">家长指南</a></li>
+                        <li><a href="#">教师资源</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系我们</h4>
+                    <ul>
+                        <li><a href="#">意见反馈</a></li>
+                        <li><a href="#">合作洽谈</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>关注我们</h4>
+                    <ul>
+                        <li><a href="#">微信公众号</a></li>
+                        <li><a href="#">新浪微博</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Miffy & Friends. All Rights Reserved. 本页面为概念设计展示，非官方网站。</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 简单的 FAQ 手风琴交互
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    // 关闭其他打开的项
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    // 切换当前项
+                    item.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+      </html>
